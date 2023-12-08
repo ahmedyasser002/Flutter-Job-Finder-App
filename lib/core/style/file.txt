@@ -1,0 +1,25 @@
+widgets or components shared within all the app
+.......................................................
+screen_util for logical pixels for responsive design
+use height.h , width.h
+font size ..> .sp
+radius .. > .r
+.......................................................
+
+download flutter svg package for icons
+create a folder for svg
+
+
+each section in figma is a feature
+for example the row of logo and skip is used within onboarding screens only so it's used in widgets folder
+
+the button that is shared within all the app would be in core but with constructor of text and ontap function
+the helpers in util files contains just the object of the dio
+
+while the data_sources folder is considred like the helper we used to do it within the course
+
+when the user logs in setToken with true and when logout set it false ... token is used to access a specific user
+
+filter we can use a list of strings and send these strings as a parameter to endpoint
+
+cupertino switch
