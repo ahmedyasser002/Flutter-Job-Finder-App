@@ -1,0 +1,5 @@
+abstract class RegisterState{}
+class GetInitialStateRegister extends RegisterState{}
+class RegisterSuccessState extends RegisterState{}
+class RegisterLoadingState extends RegisterState{}
+class RegisterFailedState extends RegisterState{}

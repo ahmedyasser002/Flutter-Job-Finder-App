@@ -1,3 +1,4 @@
 class AppAssets {
-  static const String onboardingFirst = 'assets/images/onboardingFirst.png';
+  static const String imageUrl = 'assets/images/';
+  static const String svgUrl = 'assets/svg/';
 }
