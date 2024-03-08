@@ -8,6 +8,8 @@ import 'package:flutter_application_1/features/bottom_bar/screens/bottom_bar.dar
 import 'package:flutter_application_1/features/create_account/presentation/screens/create_account.dart';
 import 'package:flutter_application_1/features/create_account/presentation/widgets/sign_in_container.dart';
 import 'package:flutter_application_1/features/forgot_password/presentation/screens/reset_password.dart';
+import 'package:flutter_application_1/features/saved_notifications/controller/saved_cubit.dart';
+// import 'package:flutter_application_1/features/saved_notifications/controller/saved_state.dart';
 import 'package:flutter_application_1/features/sign_in/controller/login_cubit.dart';
 import 'package:flutter_application_1/features/sign_in/controller/login_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -83,7 +85,7 @@ class LoginState extends State<Login> {
       if (state is LoginSuccessState) {
         ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(content: Text('Logged In Successfully')));
-        Navigator.push(
+            context.read<SavedCubit>().getSavedJobs();        Navigator.push(
             context, MaterialPageRoute(builder: (context) =>  BottomBar()));
       } else if (state is LoginFailedState) {
         ScaffoldMessenger.of(context)

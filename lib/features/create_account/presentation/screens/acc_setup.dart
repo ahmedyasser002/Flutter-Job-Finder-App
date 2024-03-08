@@ -4,8 +4,10 @@ import 'package:flutter_application_1/core/style/app_assets.dart';
 import 'package:flutter_application_1/core/style/app_colors.dart';
 import 'package:flutter_application_1/core/style/app_text_style.dart';
 import 'package:flutter_application_1/features/bottom_bar/screens/bottom_bar.dart';
+// import 'package:flutter_application_1/features/saved_notifications/controller/saved_cubit.dart';
 import 'package:flutter_application_1/features/sign_in/controller/login_cubit.dart';
 import 'package:flutter_application_1/features/sign_in/controller/login_state.dart';
+import 'package:flutter_application_1/features/sign_in/presentation/screens/login.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -19,7 +21,7 @@ class AccSetup extends StatelessWidget {
   AccSetup({super.key, required this.email, required this.password});
   @override
   Widget build(BuildContext context) {
-    var myCubit = context.read<LoginCubit>();
+    // var myCubit = context.read<LoginCubit>();
     return BlocBuilder<LoginCubit, LoggingState>(builder: (context, state) {
       if (state is LoginLoadingState) {
         return Scaffold(
@@ -36,9 +38,9 @@ class AccSetup extends StatelessWidget {
           padding: EdgeInsets.only(top: 60.h, right: 24.w, left: 24.w),
           child: SafeArea(
               child: SingleChildScrollView(
-                child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
                 InkWell(
                     onTap: () {
                       Navigator.pop(context);
@@ -80,13 +82,16 @@ class AccSetup extends StatelessWidget {
                     btnColor: AppColors.primary500,
                     textColor: const Color(0xFFFFFFFF),
                     onTap: () {
-                      myCubit.loginUser(email, password);
-                      // Navigator.push(context,
-                      //     MaterialPageRoute(builder: (context) => Login()));
+                      // context.read<SavedCubit>().getSavedJobs();
+                      
+                      // context.read<LoginCubit>().loginUser(email, password);
+                      // myCubit.loginUser(email, password);
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => Login()));
                     })
-                          ],
-                        ),
-              )),
+              ],
+            ),
+          )),
         ),
       );
     });

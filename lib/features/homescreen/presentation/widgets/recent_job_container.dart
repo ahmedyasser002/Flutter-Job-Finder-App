@@ -37,6 +37,7 @@ class _RecentJobContainerState extends State<RecentJobContainer> {
     }
   }
 
+
   @override
   Widget build(BuildContext context) {
     var myCubit = context.read<SavedCubit>();

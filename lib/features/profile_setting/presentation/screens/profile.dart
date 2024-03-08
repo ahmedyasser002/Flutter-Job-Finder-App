@@ -71,6 +71,7 @@ class Profile extends StatelessWidget {
                         children: [
                           InkWell(
                               onTap: () {
+                                
                                 Navigator.pushAndRemoveUntil(
                                     context,
                                     MaterialPageRoute(
@@ -118,7 +119,7 @@ class Profile extends StatelessWidget {
               ),
               Center(
                 child: Text(
-                  capitalize(myCubit.profileModel!.name!),
+                  capitalize(LocalStorageHelper.getStrings('name') as String),
                   style: AppTextStyle.headingFourMedium(AppColors.neutral900),
                 ),
               ),

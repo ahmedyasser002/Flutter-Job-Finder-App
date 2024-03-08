@@ -4,6 +4,7 @@ import 'package:flutter_application_1/features/saved_notifications/data/data_sou
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SavedCubit extends Cubit<SavedState> {
+  bool savedVar = false;
   SavedCubit() : super(GetInitialSavedState()) {
     getSavedJobs();
   }
@@ -112,6 +113,6 @@ class SavedCubit extends Cubit<SavedState> {
         return true;
       }
     }
-      return false;
+    return false;
   }
 }

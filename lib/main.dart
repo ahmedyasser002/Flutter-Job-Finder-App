@@ -10,5 +10,6 @@ void main() async {
   await LocalStorageHelper.init();
   // LocalStorageHelper.setBool('Remember', false);
   // LocalStorageHelper.setIntegers('progress', 0);
+  // LocalStorageHelper.setBool('board', false);
   runApp(const MainApp());
 }

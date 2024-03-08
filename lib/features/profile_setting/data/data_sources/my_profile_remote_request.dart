@@ -117,6 +117,33 @@ class MyProfileRemoteRequest {
       );
     }
   }
+//   static Future<List<PortfolioModel>?> getPortfolios(String token) async {
+//   try {
+//     _dio.options.headers['Authorization'] = 'Bearer $token';
+//     final response = await _dio.get('${dioUrl}user/profile/portofolios');
+
+//     var responseData = response.data;
+
+//     if (responseData != null && responseData['data'] != null) {
+//       var data = responseData['data']['portfolio'];
+
+//       if (data != null) {
+//         List<PortfolioModel> savedModels = [];
+        
+//         for (Map item in data) {
+//           savedModels.add(PortfolioModel.fromJson(item));
+//         }
+
+//         return savedModels;
+//       }
+//     }
+//   } catch (e) {
+//     log('Error in remote request: $e');
+//   }
+
+//   return null; // Return null in case of any errors
+// }
+
 
   static Future<dynamic> getPortfolios(String token) async {
     try {

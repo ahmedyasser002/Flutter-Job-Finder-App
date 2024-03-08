@@ -25,7 +25,7 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Image.asset(
               '${imageUrl}splash_circle.png',
-              height:700.h ,
+              height: 700.h,
               width: 701.31.w,
               fit: BoxFit.fill,
             ),
@@ -33,7 +33,11 @@ class _SplashScreenState extends State<SplashScreen> {
           ],
         ),
         splashIconSize: 700,
-        backgroundColor: const Color.fromRGBO(255,255, 255, 0.95),
-        nextScreen: LocalStorageHelper.getBool('Remember')== true ?  const BottomBar() : (LocalStorageHelper.getBool('board')??false) ==true ? const Login() : const Onboarding());
+        // backgroundColor: Color.fromARGB(241, 130, 130, 156),
+        nextScreen: LocalStorageHelper.getBool('Remember') == true
+            ? const BottomBar()
+            : (LocalStorageHelper.getBool('board') ?? false) == true
+                ? const Login()
+                : const Onboarding());
   }
 }
