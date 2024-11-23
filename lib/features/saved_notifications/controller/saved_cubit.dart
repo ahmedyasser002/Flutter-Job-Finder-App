@@ -76,7 +76,7 @@ class SavedCubit extends Cubit<SavedState> {
       // response = response.toSet();
       // response = response.toList();
       savedJobs.addAll(response);
-
+// Because there is no remove favorites so more than one press on icon add the same item to db
       for (var i = 0; i < savedJobs.length; i++) {
         for (var j = i + 1; j < savedJobs.length; j++) {
           if (savedJobs[i].jobId == savedJobs[j].jobId) {
